@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+<title>查询信息</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #ddd;
+}
+</style>
+</head>
+<body bgcolor="#d0d0d0">
+
+<ul>
+  <li><a  href="/i">插入</a></li>
+  <li><a href="/s">查询</a></li>
+</ul>
+<p>查询信息</p>
+<p>我们不会使用JavaScript和cookies,只有一个HTML静态页面</p>
+<p>请选择查询的方式</p>
+<form  method='POST'>
+<select name="s">
+<option value="name">姓名</option>
+<option value="IDcard">身份证</option>
+<option value="phonenumber">电话</option>
+<option value="QQ">QQ</option>
+<option value="wechat">微信</option>
+<option value="telegram">telegram</option>
+<option value="address">住址</option>
+</select>
+</br>查询参数: <input type="text" name="text"><br>
+<input type="submit" name="submit">
+</form>
+
+</br>
+{% if  rec %}
+
+{% for  i  in  rec %}
+
+{% for  u  in  i %}
+
+{{u}}
+{% endfor %}
+
+
+</br>
+</br>
+{% endfor %}
+{%endif%}
+</body>
+</html>
